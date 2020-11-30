@@ -67,14 +67,19 @@ public class Trie
 	}
 	public ArrayList autoComplete(String prefix) 
 	{
+		prefix = prefix.trim() ;
+		prefix = prefix.toLowerCase() ;
 		if (prefix == null)
 			return null ;
 		ArrayList a = new ArrayList() ;
-		return autoComplete(this.root , prefix , a) ;
+		Trie_Node node = returnNode(prefix);
+		return autoComplete(node , prefix , a) ;
 	}
 	public ArrayList autoComplete(Trie_Node node , String prefix, ArrayList a)
 	{
-		if(!search(prefix).equals("None"))
+		if(node == null)
+			return a;
+		if(node.isWord && search(prefix)!= "None")
 		{
 			a.add(prefix);
 			if(a.size() == 7)
@@ -94,5 +99,18 @@ public class Trie
 		}
 		return a ;
 		
+	}
+	public Trie_Node returnNode(String pre)
+	{
+		Trie_Node cur = this.root ;
+		for(int i = 0 ; i<pre.length() ; i++)
+		{
+			int index = pre.charAt(i) - 'a' ;
+			if(cur.children[index] != null)
+				cur = cur.children[index] ;
+			else 
+				return cur ;
+		}
+		return cur ;
 	}
 }

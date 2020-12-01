@@ -15,7 +15,7 @@ to run the application in run main interface java class.
 YouTube video link: 
 https://youtu.be/Qki8fRaFOMc
 
-here is the link drive link to download setup file of dictionary;
+here is the link drive link to download setup file of dictionary: 
 https://drive.google.com/file/d/1WPw5KDJoDAloqn1iRN7x1cVNjJYDCKwl/view?usp=sharing
-open this link in download setup file and install it in your PC.
+open this link to download setup file from drive and install it in your PC.
 
